@@ -33,10 +33,10 @@ public class BTTest {
                 height();
                 break;
             case 3: // preorder
-                preorder();
+                BST.preOrderPrint(cities.getNode());
                 break;
             case 4: //inorder
-                inorder();
+                BST.inOrderPrint(cities.getNode());
                 break;
             case 5: //post order
                 postorder();
