@@ -1,4 +1,4 @@
-import java.security.Key;
+
 import java.util.Scanner;
 
 public class BTTest {
@@ -8,7 +8,7 @@ public class BTTest {
     public static void main(String[] args) {
         
         BST<Integer , String> cities = new BST<>(); 
-        
+
         cities.insert(15000 , "Carson"); 
         cities.insert(50000 , "Long Beach");
         cities.insert(38000, "Inglewood");
