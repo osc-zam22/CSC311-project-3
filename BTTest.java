@@ -8,7 +8,12 @@ public class BTTest {
     public static void main(String[] args) {
         
         BST<String , Integer> cities = new BST<>();
-        cities.insert("Carson", 50000); 
+        cities.insert("Carson", 15000); 
+        cities.insert("Long Beach", 50000);
+        cities.insert("Inglewood", 38000);
+        cities.insert("Torrence", 50000); 
+        cities.insert("Pasadena", 28000);
+        cities.insert("Lakewood", 78000);    
 
         System.out.println(cities.toString());
 
