@@ -45,7 +45,7 @@ public class BTTest {
                 total();
                 break;
             case 7: //city with biggest population
-                BSTNode<String , Integer> biggestPop = cities.getMax(cities.getNode());
+                BSTNode<Integer , String> biggestPop = cities.getMax(cities.getNode());
                 System.out.println(biggestPop.toString());
                 break;
             case 8: //cities w/ less than 50k
