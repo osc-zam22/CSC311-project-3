@@ -201,7 +201,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         System.out.println(root);
     }
 
-    public static int sum(BSTNode root){
+    public static int sum(BSTNode<Integer , String> root){
         int totalSum = 0;
         helper(root, totalSum);
         return totalSum;
@@ -214,5 +214,13 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         helper(root.left(), count);
         helper(root.right(), count);
     }
+
+
+    // public static void binarySearchBelow50(BSTNode<Integer , String> root)
+    // {
+    //     if (root.key().compareTo(5000) ){
+
+    //     }
+    // }
 
 }
