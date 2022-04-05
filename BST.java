@@ -156,7 +156,7 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
 
     private void printVisit(BSTNode<Key , E> rNode) 
     {
-        out.append(rNode.toString() + " ");
+        out.append(rNode.toString() + "\n");
     }
 
     public BSTNode<Key , E> getMax(BSTNode<Key , E> root)
