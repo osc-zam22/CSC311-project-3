@@ -1,3 +1,4 @@
+import java.security.Key;
 import java.util.Scanner;
 
 public class BTTest {
@@ -6,6 +7,11 @@ public class BTTest {
 
     public static void main(String[] args) {
         
+        BST<String , Integer> cities = new BST<>();
+        cities.insert("Carson", 50000); 
+
+        System.out.println(cities.toString());
+
         int mainMenuChoice;
         do{
 
@@ -13,31 +19,14 @@ public class BTTest {
             printMenu();
             System.out.println("Please enter a choice");
             mainMenuChoice = scnr.nextInt();
-
-
-        }while(mainMenuChoice != 11);
-
-        System.out.println("Ending program");
-
-    }
-
-
-    static void printMenu(){
-        System.out.println("1. print number of cities\n2. print out the height of the treen\n" +
-            "3. preOrder printout\n4. inorder printout\n5. postorderTraaversal\n6. total population between all cities\n" + 
-            "7. City with biggerst populaton\n8. cities with less than 50,000\n9. cities with population between 50,000 - 80,000\n" + 
-            "10. Update Pasadena and view change"); 
-    }
-    static void userChoice(int mainMenuChoice)
-    {
-        switch(mainMenuChoice)
+            switch(mainMenuChoice)
         {
             case 1: //number of cities
-                numOfCities();
+                System.out.printf("Number of Cities : %d" , cities.nodecount);
                 break;
             case 2: //height of tree
-                    height();
-                    break;
+                height();
+                break;
             case 3: // preorder
                 preorder();
                 break;
@@ -51,7 +40,8 @@ public class BTTest {
                 total();
                 break;
             case 7: //city with biggest population
-                biggestPop();
+                BSTNode<String , Integer> biggestPop = cities.getMax(cities.getNode());
+                System.out.println(biggestPop.toString());
                 break;
             case 8: //cities w/ less than 50k
                 lessThan50k();
@@ -67,6 +57,20 @@ public class BTTest {
             default :
                 System.out.println("invalid input");
         }
+
+
+        }while(mainMenuChoice != 11);
+
+        System.out.println("Ending program");
+
+    }
+
+
+    static void printMenu(){
+        System.out.println("1. print number of cities\n2. print out the height of the treen\n" +
+            "3. preOrder printout\n4. inorder printout\n5. postorderTraaversal\n6. total population between all cities\n" + 
+            "7. City with biggerst populaton\n8. cities with less than 50,000\n9. cities with population between 50,000 - 80,000\n" + 
+            "10. Update Pasadena and view change"); 
     }
     
     public static void numOfCities(){

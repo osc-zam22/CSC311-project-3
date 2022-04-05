@@ -40,4 +40,9 @@
         /** @return True if a leaf node, false otherwise */
         public boolean isLeaf()
         { return (left == null) && (right == null); }
+
+        public String toString()
+        {
+            return this.key + " : " + this.element;
+        }
       }

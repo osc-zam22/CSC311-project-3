@@ -141,7 +141,7 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
         if (rt == null) 
             return;
         printhelp(rt.left());
-        printVisit(rt.element());
+        printVisit(rt);
         printhelp(rt.right());
     }
 
@@ -154,9 +154,22 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
         return out.toString();
     }
 
-    private void printVisit(E it) 
+    private void printVisit(BSTNode<Key , E> rNode) 
     {
-        out.append(it + " ");
+        out.append(rNode.toString() + " ");
+    }
+
+    public BSTNode<Key , E> getMax(BSTNode<Key , E> root)
+    {
+        BSTNode<Key , E> temp = new BSTNode(root.key(), root.element(), root.left(), root.right());
+        while (temp.right() != null && temp != null)
+            temp = temp.right();
+        return temp;
+    }
+
+    public BSTNode<Key , E> getNode()
+    {
+        return this.root;
     }
 
 }
