@@ -12,8 +12,8 @@ public class BTTest {
         cities.insert(50000 , "Long Beach");
         cities.insert(38000, "Inglewood");
         cities.insert(50000 , "Torrence" ) ; 
-        cities.insert( 28000 , "Pasadena");
-        cities.insert( 78000 , "Lakewood");    
+        cities.insert(28000 , "Pasadena");
+        cities.insert(78000 , "Lakewood");    
 
         System.out.println(cities.toString());
 
