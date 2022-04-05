@@ -125,7 +125,7 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
     {
         if (rt.left() == null) 
             return rt;
-    return getmin(rt.left());
+        return getmin(rt.left());
     }
 
     private BSTNode<Key,E> deletemin(BSTNode<Key,E> rt) 
