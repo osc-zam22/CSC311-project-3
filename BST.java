@@ -217,7 +217,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
 
     public static int treeHeight(BSTNode<Integer, String> root){
         if(root == null)
-        return 0;
+            return 0;
         return 1 + Math.max(treeHeight(root.left()), treeHeight(root.right()));
     }
 
