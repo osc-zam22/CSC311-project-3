@@ -216,11 +216,43 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
     }
 
 
-    // public static void binarySearchBelow50(BSTNode<Integer , String> root)
+    public static void binarySearchBelowThreshold(BSTNode<Integer , String> root , int numBelow)
+    {
+        if (root.key().compareTo(numBelow) > 0 )
+        {
+            binarySearchBelowThreshold(root.left(), numBelow);
+        }
+        else if(root.key().compareTo(numBelow) <= 0 )
+        {
+            System.out.println();
+        }
+    }
+
+
+    // public static BSTNode findCity(String city , BSTNode<Integer , String> root)
     // {
-    //     if (root.key().compareTo(5000) ){
+    //     if (root == null)
+    //     {
+    //         return null;
+    //     }
+    //     else if(isCity(city, root)){
+    //         return root;
+    //     }
+    //     BSTNode tempLeftNode = findCity(city, root.left());
+    //     BSTNode tempRightNode = findCity(city, root.right());
+    //     if(findCity(city, root.left()) == null)
+    //     {
 
     //     }
     // }
+
+    private static boolean isCity(String city , BSTNode<Integer , String> root)
+    {
+        if(root.element().equals(city))
+        {
+            return true;   
+        }
+        return false;
+    }
 
 }
