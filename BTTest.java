@@ -74,7 +74,7 @@ public class BTTest {
     static void printMenu(){
         System.out.println("1. print number of cities\n2. print out the height of the treen\n" +
             "3. preOrder printout\n4. inorder printout\n5. postorderTraaversal\n6. total population between all cities\n" + 
-            "7. City with biggerst populaton\n8. cities with less than 50,000\n9. cities with population between 50,000 - 80,000\n" + 
+            "7. City with biggest populaton\n8. cities with less than 50,000\n9. cities with population between 50,000 - 80,000\n" + 
             "10. Update Pasadena and view change"); 
     }
     
