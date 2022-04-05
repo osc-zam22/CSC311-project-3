@@ -31,7 +31,7 @@ public class BTTest {
                 System.out.printf("Number of Cities : %d" , cities.nodecount);
                 break;
             case 2: //height of tree
-                height();
+                System.out.print(BST.treeHeight(cities.getNode()));
                 break;
             case 3: // preorder
                 BST.preOrderPrint(cities.getNode());
@@ -79,34 +79,6 @@ public class BTTest {
             "10. Update Pasadena and view change"); 
     }
     
-    public static void numOfCities(){
-
-    }
-
-    public static void height(){
-
-    }
-
-    public static void preorder(){
-
-    }
-
-    public static void inorder(){
-
-    }
-
-    public static void postorder(){
-
-    }
-
-    public static void total(){
-
-    }
-
-    public static void biggestPop(){
-
-    }
-
     public static void lessThan50k(){
 
     }
