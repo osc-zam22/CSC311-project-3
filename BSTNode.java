@@ -43,6 +43,6 @@
 
         public String toString()
         {
-            return this.key + " : " + this.element;
+            return this.element + " : " + this.key;
         }
       }
