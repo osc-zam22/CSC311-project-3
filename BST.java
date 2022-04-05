@@ -200,4 +200,19 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         postOrderPrint(root.right());
         System.out.println(root);
     }
+
+    public static int sum(BSTNode root){
+        int totalSum = 0;
+        helper(root, totalSum);
+        return totalSum;
+    }
+
+    private static void helper(BSTNode<Integer,String> root, int count){
+        if(root == null)
+        return;
+        count += root.key();
+        helper(root.left(), count);
+        helper(root.right(), count);
+    }
+
 }
