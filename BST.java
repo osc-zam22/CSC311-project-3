@@ -126,7 +126,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
     {
         if (rt.left() == null) 
             return rt;
-    return getmin(rt.left());
+        return getmin(rt.left());
     }
 
     private BSTNode<Key,E> deletemin(BSTNode<Key,E> rt) 
@@ -136,20 +136,6 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         rt.setLeft(deletemin(rt.left()));
         return rt;
     }
-
-    public BSTNode<Key , E> getMax(BSTNode<Key , E> root)
-    {
-        BSTNode<Key , E> temp = new BSTNode(root.key(), root.element(), root.left(), root.right());
-        while (temp.right() != null && temp != null)
-            temp = temp.right();
-        return temp;
-    }
-
-    public BSTNode<Key , E> getNode()
-    {
-        return this.root;
-    }
-
 
     private void printhelp(BSTNode<Key,E> rt) 
     {
@@ -174,6 +160,18 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         out.append(rNode.toString() + "\n");
     }
 
+    public BSTNode<Key , E> getMax(BSTNode<Key , E> root)
+    {
+        BSTNode<Key , E> temp = new BSTNode(root.key(), root.element(), root.left(), root.right());
+        while (temp.right() != null && temp != null)
+            temp = temp.right();
+        return temp;
+    }
+
+    public BSTNode<Key , E> getNode()
+    {
+        return this.root;
+    }
 
     static public void preOrderPrint(BSTNode root)
     {
