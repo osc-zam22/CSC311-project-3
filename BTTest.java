@@ -79,34 +79,6 @@ public class BTTest {
             "10. Update Pasadena and view change"); 
     }
     
-    public static void numOfCities(){
-
-    }
-
-    public static void height(){
-
-    }
-
-    public static void preorder(){
-
-    }
-
-    public static void inorder(){
-
-    }
-
-    public static void postorder(){
-
-    }
-
-    public static void total(){
-
-    }
-
-    public static void biggestPop(){
-
-    }
-
     public static void lessThan50k(){
 
     }
