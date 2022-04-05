@@ -215,6 +215,11 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         helper(root.right(), count);
     }
 
+    public static int treeHeight(BSTNode<Integer, String> root){
+        if(root == null)
+        return 0;
+        return 1 + Math.max(treeHeight(root.left()), treeHeight(root.right()));
+    }
 
     // public static void binarySearchBelow50(BSTNode<Integer , String> root)
     // {

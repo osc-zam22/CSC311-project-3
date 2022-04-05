@@ -31,7 +31,7 @@ public class BTTest {
                 System.out.printf("Number of Cities : %d" , cities.nodecount);
                 break;
             case 2: //height of tree
-                height();
+                System.out.print(BST.treeHeight(cities.getNode()));
                 break;
             case 3: // preorder
                 BST.preOrderPrint(cities.getNode());
