@@ -88,7 +88,7 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
     {
         if (rt == null) 
             return new BSTNode<Key,E>(k, e);
-        if (rt.key().compareTo(k) > 0)
+        if (((Comparable<? super Key>) rt.element()).compareTo(e) > 0)
             rt.setLeft(inserthelp(rt.left(), k, e));
         else
             rt.setRight(inserthelp(rt.right(), k, e));
@@ -189,5 +189,14 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
         inOrderPrint(root.left());
         System.out.println(root);
         inOrderPrint(root.right());
+    }
+
+    public static void postOrderPrint(BSTNode root){
+        if (root == null){
+            return;
+        }
+        postOrderPrint(root.left());
+        postOrderPrint(root.right());
+        System.out.println(root);
     }
 }

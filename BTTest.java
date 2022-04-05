@@ -39,7 +39,7 @@ public class BTTest {
                 BST.inOrderPrint(cities.getNode());
                 break;
             case 5: //post order
-                postorder();
+                BST.postOrderPrint(cities.getNode());
                 break;
             case 6: //total population
                 total();
