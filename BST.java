@@ -174,12 +174,15 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
 
     static public void preOrderPrint(BSTNode root)
     {
+        if(root == null){
+            return;
+        }
         System.out.println(root.toString());
         preOrderPrint(root.left());
         preOrderPrint(root.right());
     }
     public static void inOrderPrint()
     {
-        
+
     }
 }
