@@ -1,3 +1,4 @@
+
 /** Source code example for "A Practical Introduction to Data
 Structures and Algorithm Analysis, 3rd Edition (Java)" 
 by Clifford A. Shaffer
@@ -7,7 +8,7 @@ Copyright 2008-2011 by Clifford A. Shaffer
 import java.lang.Comparable;
 
 /** Binary Search Tree implementation for Dictionary ADT */
-class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> {
+class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>> implements Dictionary<Key, E> {
     private BSTNode<Key,E> root; // Root of the BST
     int nodecount;             // Number of nodes in the BST
 
@@ -88,7 +89,7 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
     {
         if (rt == null) 
             return new BSTNode<Key,E>(k, e);
-        if (((Comparable<? super Key>) rt.element()).compareTo(e) > 0)
+        if (rt.key().compareTo(k) > 0)
             rt.setLeft(inserthelp(rt.left(), k, e));
         else
             rt.setRight(inserthelp(rt.right(), k, e));
@@ -125,7 +126,7 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
     {
         if (rt.left() == null) 
             return rt;
-        return getmin(rt.left());
+    return getmin(rt.left());
     }
 
     private BSTNode<Key,E> deletemin(BSTNode<Key,E> rt) 
@@ -135,6 +136,8 @@ class BST<Key extends Comparable<? super Key>, E> implements Dictionary<Key, E> 
         rt.setLeft(deletemin(rt.left()));
         return rt;
     }
+
+
 
     private void printhelp(BSTNode<Key,E> rt) 
     {

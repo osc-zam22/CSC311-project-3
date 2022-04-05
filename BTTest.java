@@ -7,13 +7,13 @@ public class BTTest {
 
     public static void main(String[] args) {
         
-        BST<String , Integer> cities = new BST<>();
-        cities.insert("Carson", 15000); 
-        cities.insert("Long Beach", 50000);
-        cities.insert("Inglewood", 38000);
-        cities.insert("Torrence", 50000); 
-        cities.insert("Pasadena", 28000);
-        cities.insert("Lakewood", 78000);    
+        BST<Integer , String> cities = new BST<>();
+        cities.insert(15000 , "Carson"); 
+        cities.insert(50000 , "Long Beach");
+        cities.insert(38000, "Inglewood");
+        cities.insert(50000 , "Torrence" ) ; 
+        cities.insert( 28000 , "Pasadena");
+        cities.insert( 78000 , "Lakewood");    
 
         System.out.println(cities.toString());
 
