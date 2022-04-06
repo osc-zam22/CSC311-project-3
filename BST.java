@@ -202,17 +202,15 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
     }
 
     public static int sum(BSTNode<Integer , String> root){
-        int totalSum = 0;
-        helper(root, totalSum);
+        int totalSum = sumHelper(root, 0);
         return totalSum;
     }
 
-    private static void helper(BSTNode<Integer,String> root, int count){
+    private static int sumHelper(BSTNode<Integer,String> root, int count){
         if(root == null)
-        return;
+            return 0;
         count += root.key();
-        helper(root.left(), count);
-        helper(root.right(), count);
+        return sumHelper(root.right() , count) + sumHelper(root.left() , count);
     }
 
     public static int treeHeight(BSTNode<Integer, String> root){
@@ -222,16 +220,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
     }
 
     public static void binarySearchBelowThreshold(BSTNode<Integer , String> root , int numBelow)
-    {
-        if (root.key().compareTo(numBelow) > 0 )
-        {
-            binarySearchBelowThreshold(root.left(), numBelow);
-        }
-        else if(root.key().compareTo(numBelow) <= 0 )
-        {
-            System.out.println();
-        }
-    }
+    
 
 
     // public static BSTNode findCity(String city , BSTNode<Integer , String> root)
