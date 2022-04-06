@@ -175,11 +175,13 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         return root;
     }
 
+    // returns the root of the BST
     public BSTNode<Key , E> getNode()
     {
         return this.root;
     }
 
+    // prints the binary tree in pre order traversal
     public void preOrderPrint(BSTNode root)
     {
         if(root == null){
@@ -190,6 +192,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         preOrderPrint(root.right());
     }
 
+    // prints the binary tree in in order traversal
     public void inOrderPrint(BSTNode root)
     {
         if (root == null){
@@ -200,6 +203,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         this.inOrderPrint(root.right());
     }
 
+    // prints the post order traversal of the binary tree
     public void postOrderPrint(BSTNode root){
         if (root == null){
             return;
@@ -209,20 +213,22 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         System.out.println(root);
     }
 
-    public int addBT(BSTNode<Integer,String> root){
+    // returns the sum of the population
+    public int sum(BSTNode<Integer,String> root){
         if (root == null)
             return 0;
-        return (root.key() + addBT(root.left()) + addBT(root.right()));
-}
+        return (root.key() + sum(root.left()) + sum(root.right()));
+    }
 
+    // retturns the height of the tree
     public int treeHeight(BSTNode<Integer, String> root){
         if(root == null)
             return 0;
         return 1 + Math.max(treeHeight(root.left()), treeHeight(root.right()));
     }
 
-    public void binarySearchBelowThreshold(BSTNode<Integer , String> root , int numBelow)
-    
+    // returns the nodes that are less then the input
+    public void belowThreshold(BSTNode<Integer , String> root , int numBelow)
     {
         if(root == null)
         {
@@ -232,10 +238,11 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         {
             System.out.print(root.toString() + "\n");
         }
-        binarySearchBelowThreshold(root.left(), numBelow);
-        binarySearchBelowThreshold(root.right(), numBelow);
+        belowThreshold(root.left(), numBelow);
+        belowThreshold(root.right(), numBelow);
     }
 
+    // returns the nodes between the two values
     public void betweenThreshold(BSTNode<Integer , String> root , int lowerBound, int upperBound )
     {
         {
@@ -252,6 +259,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         } 
     }
 
+    // returns the node containing the city being searched
     public BSTNode findCity(BSTNode root , String city)
     {
         if(root == null){
@@ -274,6 +282,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         return null;
     }
 
+    // helper function to check if the node contains the city
     private boolean isCity( String element , String city)
     {
         if(element.equalsIgnoreCase(city))
