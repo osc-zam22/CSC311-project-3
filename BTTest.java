@@ -53,7 +53,7 @@ public class BTTest {
                     BST.binarySearchBelowThreshold(cities.getNode(), 50000);
                     break;
                 case 9: // cities between 50k and 80k population
-                    between50k80k();
+                    BST.betweenThreshold(cities.getNode(), 50000, 80000);
                     break;
                 case 10: //update pasdena
                     updatePas();

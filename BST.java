@@ -241,12 +241,12 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
             {
                 return ;
             }
-            if(root.key() )
+            if(root.key().compareTo(lowerBound) >= 0 && root.key().compareTo(upperBound) <= 0)
             {
                 System.out.print(root.toString() + "\n");
             }
-            binarySearchBelowThreshold(root.left(), numBelow);
-            binarySearchBelowThreshold(root.right(), numBelow);
+            betweenThreshold(root.left() , lowerBound, upperBound);
+            betweenThreshold(root.right() , lowerBound, upperBound);
         } 
     }
 
