@@ -208,7 +208,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
 
     private static int sumHelper(BSTNode<Integer,String> root, int count){
         if(root == null)
-            return 0;
+            return count;
         count += root.key();
         return sumHelper(root.right() , count) + sumHelper(root.left() , count);
     }
