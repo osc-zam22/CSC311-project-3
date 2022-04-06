@@ -122,6 +122,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
     return rt;
     }
 
+    // gets min valuw in the tree
     private BSTNode<Key,E> getmin(BSTNode<Key,E> rt) 
     {
         if (rt.left() == null) 
@@ -129,6 +130,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         return getmin(rt.left());
     }
 
+    // deletes the min
     private BSTNode<Key,E> deletemin(BSTNode<Key,E> rt) 
     {
         if (rt.left() == null) 
@@ -137,6 +139,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         return rt;
     }
 
+    // helper print function
     private void printhelp(BSTNode<Key,E> rt) 
     {
         if (rt == null) 
@@ -148,6 +151,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
 
     private StringBuffer out;
 
+    // to string function
     public String toString() 
     {
         out = new StringBuffer(100);
@@ -155,17 +159,20 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         return out.toString();
     }
 
+    // another helper function to the to string
     private void printVisit(BSTNode<Key , E> rNode) 
     {
         out.append(rNode.toString() + "\n");
     }
 
+    // returns the max Value of the Tree 
     public BSTNode<Key , E> getMax(BSTNode<Key , E> root)
     {
-        BSTNode<Key , E> temp = new BSTNode(root.key(), root.element(), root.left(), root.right());
-        while (temp.right() != null && temp != null)
-            temp = temp.right();
-        return temp;
+        if(root.right() != null && root != null)
+        {
+            return getMax(root.right());
+        }
+        return root;
     }
 
     public BSTNode<Key , E> getNode()
