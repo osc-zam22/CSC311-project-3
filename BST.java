@@ -180,7 +180,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         return this.root;
     }
 
-    static public void preOrderPrint(BSTNode root)
+    public void preOrderPrint(BSTNode root)
     {
         if(root == null){
             return;
@@ -189,51 +189,39 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         preOrderPrint(root.left());
         preOrderPrint(root.right());
     }
-    public static void inOrderPrint(BSTNode root)
+
+    public void inOrderPrint(BSTNode root)
     {
         if (root == null){
             return;
         }
-        inOrderPrint(root.left());
+        this.inOrderPrint(root.left());
         System.out.println(root);
-        inOrderPrint(root.right());
+        this.inOrderPrint(root.right());
     }
 
-    public static void postOrderPrint(BSTNode root){
+    public void postOrderPrint(BSTNode root){
         if (root == null){
             return;
         }
-        postOrderPrint(root.left());
-        postOrderPrint(root.right());
+        this.postOrderPrint(root.left());
+        this.postOrderPrint(root.right());
         System.out.println(root);
     }
 
-   /* public static int sum(BSTNode<Integer , String> root){
-        int totalSum = sumHelper(root, 0);
-        return totalSum;
-    }
-
-    private static int sumHelper(BSTNode<Integer,String> root, int count){
-        if(root == null)
-            return count;
-        count += root.key();
-        return sumHelper(root.right() , count) + sumHelper(root.left() , count);
-    }
-*/
-
-    static int addBT(BSTNode<Integer,String> root){
+    public int addBT(BSTNode<Integer,String> root){
         if (root == null)
             return 0;
         return (root.key() + addBT(root.left()) + addBT(root.right()));
 }
 
-    public static int treeHeight(BSTNode<Integer, String> root){
+    public int treeHeight(BSTNode<Integer, String> root){
         if(root == null)
             return 0;
         return 1 + Math.max(treeHeight(root.left()), treeHeight(root.right()));
     }
 
-    public static void binarySearchBelowThreshold(BSTNode<Integer , String> root , int numBelow)
+    public void binarySearchBelowThreshold(BSTNode<Integer , String> root , int numBelow)
     
     {
         if(root == null)
@@ -248,7 +236,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         binarySearchBelowThreshold(root.right(), numBelow);
     }
 
-    public static void betweenThreshold(BSTNode<Integer , String> root , int lowerBound, int upperBound )
+    public void betweenThreshold(BSTNode<Integer , String> root , int lowerBound, int upperBound )
     {
         {
             if(root == null)
@@ -265,24 +253,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
     }
 
 
-    // public static BSTNode findCity(String city , BSTNode<Integer , String> root)
-    // {
-    //     if (root == null)
-    //     {
-    //         return null;
-    //     }
-    //     else if(isCity(city, root)){
-    //         return root;
-    //     }
-    //     BSTNode tempLeftNode = findCity(city, root.left());
-    //     BSTNode tempRightNode = findCity(city, root.right());
-    //     if(findCity(city, root.left()) == null)
-    //     {
-
-    //     }
-    // }
-
-    private static boolean isCity(String city , BSTNode<Integer , String> root)
+    private boolean isCity(String city , BSTNode<Integer , String> root)
     {
         if(root.element().equals(city))
         {

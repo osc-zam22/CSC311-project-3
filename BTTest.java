@@ -31,29 +31,29 @@ public class BTTest {
                     System.out.printf("Number of Cities : %d" , cities.nodecount);
                     break;
                 case 2: //height of tree
-                    System.out.print(BST.treeHeight(cities.getNode()));
+                    System.out.print(cities.treeHeight(cities.getNode()));
                     break;
                 case 3: // preorder
-                    BST.preOrderPrint(cities.getNode());
+                    cities.preOrderPrint(cities.getNode());
                     break;
                 case 4: //inorder
-                    BST.inOrderPrint(cities.getNode());
+                    cities.inOrderPrint(cities.getNode());
                     break;
                 case 5: //post order
-                    BST.postOrderPrint(cities.getNode());
+                cities.postOrderPrint(cities.getNode());
                     break;
                 case 6: //total population
-                    System.out.println(BST.addBT(cities.getNode()));
+                    System.out.println(cities.addBT(cities.getNode()));
                     break;
                 case 7: //city with biggest population
                     BSTNode<Integer , String> biggestPop = cities.getMax(cities.getNode());
                     System.out.println(biggestPop.toString());
                     break;
                 case 8: //cities w/ less than 50k
-                    BST.binarySearchBelowThreshold(cities.getNode(), 50000);
+                    cities.binarySearchBelowThreshold(cities.getNode(), 50000);
                     break;
                 case 9: // cities between 50k and 80k population
-                    BST.betweenThreshold(cities.getNode(), 50000, 80000);
+                    cities.betweenThreshold(cities.getNode(), 50000, 80000);
                     break;
                 case 10: //update pasdena
                     updatePas();
@@ -80,7 +80,7 @@ public class BTTest {
         bonusCities.getNode().left().right().setLeft(new BSTNode<Integer , String>(28000 , "Pasadena"));
         bonusCities.getNode().setRight(new BSTNode<Integer , String>(78000 , "Lakewood" ));
 
-        BST.preOrderPrint(bonusCities.getNode());
+        bonusCities.preOrderPrint(bonusCities.getNode());
 
     }
 
