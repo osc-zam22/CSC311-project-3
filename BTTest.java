@@ -43,7 +43,7 @@ public class BTTest {
                     BST.postOrderPrint(cities.getNode());
                     break;
                 case 6: //total population
-                    System.out.println(BST.sum(cities.getNode()));
+                    System.out.println(BST.addBT(cities.getNode()));
                     break;
                 case 7: //city with biggest population
                     BSTNode<Integer , String> biggestPop = cities.getMax(cities.getNode());
