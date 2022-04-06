@@ -252,10 +252,31 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         } 
     }
 
-
-    private boolean isCity(String city , BSTNode<Integer , String> root)
+    public BSTNode findCity(BSTNode root , String city)
     {
-        if(root.element().equals(city))
+        if(root == null){
+            return null;
+        }
+        if(isCity((String)root.element() , city))
+        {
+            return root;
+        }
+        BSTNode temp1 = findCity(root.left() , city);
+        BSTNode temp2 = findCity(root.right() , city);
+        if (temp1 != null)
+        {
+            return temp1;
+        }
+        else if(temp2 != null)
+        {
+            return temp2;
+        }
+        return null;
+    }
+
+    private boolean isCity( String element , String city)
+    {
+        if(element.equalsIgnoreCase(city))
         {
             return true;   
         }

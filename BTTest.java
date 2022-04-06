@@ -56,7 +56,13 @@ public class BTTest {
                     cities.betweenThreshold(cities.getNode(), 50000, 80000);
                     break;
                 case 10: //update pasdena
-                    updatePas();
+                    BSTNode temp = cities.findCity(cities.getNode(), "pasadena");
+                    temp = null;
+                    System.out.println("Enter a new Population for Pasadena");
+                    int newPop = scnr.nextInt();
+                    cities.insert(newPop, "Pasadena");
+                    cities.inOrderPrint(cities.getNode());
+                    // System.out.println(temp.toString());
                     break;
                 case 11:
                     break;
