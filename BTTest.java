@@ -86,10 +86,10 @@ public class BTTest {
 
 
     static void printMenu(){
-        System.out.println("1. print number of cities\n2. print out the height of the treen\n" +
-            "3. preOrder printout\n4. inorder printout\n5. postorderTraaversal\n6. total population between all cities\n" + 
-            "7. City with biggest populaton\n8. cities with less than 50,000\n9. cities with population between 50,000 - 80,000\n" + 
-            "10. Update Pasadena and view change"); 
+        System.out.println("1. Print number of cities.\n2. Print out the height of the tree.\n" +
+            "3. Pre-Order Traversal printout.\n4. In-Order Traversal printout.\n5. Post-Order Traversal printout.\n6. Total population between all cities.\n" + 
+            "7. City with biggest populaton.\n8. Cities with less than 50,000.\n9. Cities with population between 50,000 - 80,000.\n" + 
+            "10. Update Pasadena and view change."); 
     }
     
     public static void lessThan50k(){
