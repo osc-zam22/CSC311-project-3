@@ -67,7 +67,20 @@ public class BTTest {
 
         }while(mainMenuChoice != 11);
 
-        System.out.println("Ending program");
+        System.out.println("Ending program\n------------\n--------------\n\nBonus in class problem, manually recreate tree from the example given,"
+                + " will print in preorder");
+
+        //bonus extra credit to make tree look like the one in the paper manually
+        // it is printed in preorder
+        BST<Integer , String> bonusCities = new BST<>();
+        bonusCities.insert(15000, "Carson");
+        bonusCities.getNode().setLeft(new BSTNode<Integer , String>(50000 , "Long Beach"));
+        bonusCities.getNode().left().setLeft(new BSTNode<Integer , String>(38000 , "Inglewood"));
+        bonusCities.getNode().left().setRight(new BSTNode<Integer , String>(50000 , "Torrance"));
+        bonusCities.getNode().left().right().setLeft(new BSTNode<Integer , String>(28000 , "Pasadena"));
+        bonusCities.getNode().setRight(new BSTNode<Integer , String>(78000 , "Lakewood" ));
+
+        BST.preOrderPrint(bonusCities.getNode());
 
     }
 
