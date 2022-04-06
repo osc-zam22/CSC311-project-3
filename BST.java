@@ -208,7 +208,7 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         System.out.println(root);
     }
 
-    public static int sum(BSTNode<Integer , String> root){
+   /* public static int sum(BSTNode<Integer , String> root){
         int totalSum = sumHelper(root, 0);
         return totalSum;
     }
@@ -219,6 +219,13 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
         count += root.key();
         return sumHelper(root.right() , count) + sumHelper(root.left() , count);
     }
+*/
+
+    static int addBT(BSTNode<Integer,String> root){
+        if (root == null)
+            return 0;
+        return (root.key() + addBT(root.left()) + addBT(root.right()));
+}
 
     public static int treeHeight(BSTNode<Integer, String> root){
         if(root == null)
