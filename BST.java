@@ -221,6 +221,34 @@ class BST<Key extends Comparable<? super Key>, E extends Comparable<? extends E>
 
     public static void binarySearchBelowThreshold(BSTNode<Integer , String> root , int numBelow)
     
+    {
+        if(root == null)
+        {
+            return ;
+        }
+        if(root.key().compareTo(numBelow) <= 0)
+        {
+            System.out.print(root.toString() + "\n");
+        }
+        binarySearchBelowThreshold(root.left(), numBelow);
+        binarySearchBelowThreshold(root.right(), numBelow);
+    }
+
+    public static void betweenThreshold(BSTNode<Integer , String> root , int lowerBound, int upperBound )
+    {
+        {
+            if(root == null)
+            {
+                return ;
+            }
+            if(root.key() )
+            {
+                System.out.print(root.toString() + "\n");
+            }
+            binarySearchBelowThreshold(root.left(), numBelow);
+            binarySearchBelowThreshold(root.right(), numBelow);
+        } 
+    }
 
 
     // public static BSTNode findCity(String city , BSTNode<Integer , String> root)
