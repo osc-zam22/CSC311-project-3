@@ -95,6 +95,6 @@ public class BTTest {
         System.out.println("1. Print number of cities.\n2. Print out the height of the tree.\n" +
             "3. Pre-Order Traversal printout.\n4. In-Order Traversal printout.\n5. Post-Order Traversal printout.\n6. Total population between all cities.\n" + 
             "7. City with biggest populaton.\n8. Cities with less than 50,000.\n9. Cities with population between 50,000 - 80,000.\n" + 
-            "10. Update Pasadena and view change.\nEnd program and display Extra Credit."); 
+            "10. Update Pasadena and view change.\n11. End program and display Extra Credit."); 
     }
 }
