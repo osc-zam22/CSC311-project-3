@@ -9,6 +9,7 @@ public class BTTest {
         
         BST<Integer , String> cities = new BST<Integer , String>(); 
 
+        // creates a BST and inserts them sorted based on the integer
         cities.insert(15000 , "Carson"); 
         cities.insert(50000 , "Long Beach");
         cities.insert(38000, "Inglewood");
@@ -16,7 +17,6 @@ public class BTTest {
         cities.insert(28000 , "Pasadena");
         cities.insert(78000 , "Lakewood");    
 
-        System.out.println(cities.toString());
 
         int mainMenuChoice;
         do{
@@ -43,14 +43,14 @@ public class BTTest {
                 cities.postOrderPrint(cities.getNode());
                     break;
                 case 6: //total population
-                    System.out.println(cities.addBT(cities.getNode()));
+                    System.out.println(cities.sum(cities.getNode()));
                     break;
                 case 7: //city with biggest population
                     BSTNode<Integer , String> biggestPop = cities.getMax(cities.getNode());
                     System.out.println(biggestPop.toString());
                     break;
                 case 8: //cities w/ less than 50k
-                    cities.binarySearchBelowThreshold(cities.getNode(), 50000);
+                    cities.belowThreshold(cities.getNode(), 50000);
                     break;
                 case 9: // cities between 50k and 80k population
                     cities.betweenThreshold(cities.getNode(), 50000, 80000);
@@ -62,7 +62,6 @@ public class BTTest {
                     int newPop = scnr.nextInt();
                     cities.insert(newPop, "Pasadena");
                     cities.inOrderPrint(cities.getNode());
-                    // System.out.println(temp.toString());
                     break;
                 case 11:
                     break;
@@ -76,6 +75,9 @@ public class BTTest {
         System.out.println("Ending program\n------------\n--------------\n\nBonus in class problem, manually recreate tree from the example given,"
                 + " will print in preorder");
 
+
+
+                
         //bonus extra credit to make tree look like the one in the paper manually
         // it is printed in preorder
         BST<Integer , String> bonusCities = new BST<>();
@@ -91,6 +93,7 @@ public class BTTest {
     }
 
 
+    // handles the printing of the menu
     static void printMenu(){
         System.out.println("1. Print number of cities.\n2. Print out the height of the tree.\n" +
             "3. Pre-Order Traversal printout.\n4. In-Order Traversal printout.\n5. Post-Order Traversal printout.\n6. Total population between all cities.\n" + 
