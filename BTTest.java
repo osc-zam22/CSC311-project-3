@@ -25,35 +25,45 @@ public class BTTest {
             printMenu();
             System.out.println("Please enter a choice");
             mainMenuChoice = scnr.nextInt();
+            System.out.println("\n\n---------------------------\n\n");
             switch(mainMenuChoice)
             {
                 case 1: //number of cities
                     System.out.printf("Number of Cities : %d" , cities.nodecount);
+                    System.out.println("\n\n---------------------------\n\n");
                     break;
                 case 2: //height of tree
                     System.out.print("Height of BST: " + cities.treeHeight(cities.getNode()));
+                    System.out.println("\n\n---------------------------\n\n");
                     break;
                 case 3: // preorder
                     cities.preOrderPrint(cities.getNode());
+                    System.out.println("\n\n---------------------------\n\n");
                     break;
                 case 4: //inorder
                     cities.inOrderPrint(cities.getNode());
+                    System.out.println("\n\n---------------------------\n\n");
                     break;
                 case 5: //post order
                 cities.postOrderPrint(cities.getNode());
+                System.out.println("\n\n---------------------------\n\n");
                     break;
                 case 6: //total population
                     System.out.println(cities.sum(cities.getNode()));
+                    System.out.println("\n\n---------------------------\n\n");
                     break;
                 case 7: //city with biggest population
                     BSTNode<Integer , String> biggestPop = cities.getMax(cities.getNode());
+                    System.out.println("\n\n---------------------------\n\n");
                     System.out.println(biggestPop.toString());
                     break;
                 case 8: //cities w/ less than 50k
                     cities.belowThreshold(cities.getNode(), 50000);
+                    System.out.println("\n\n---------------------------\n\n");
                     break;
                 case 9: // cities between 50k and 80k population
                     cities.betweenThreshold(cities.getNode(), 50000, 80000);
+                    System.out.println("\n\n---------------------------\n\n");
                     break;
                 case 10: //update pasdena
                     BSTNode temp = cities.findCity(cities.getNode(), "pasadena");
@@ -62,6 +72,7 @@ public class BTTest {
                     int newPop = scnr.nextInt();
                     cities.insert(newPop, "Pasadena");
                     cities.inOrderPrint(cities.getNode());
+                    System.out.println("\n\n---------------------------\n\n");
                     break;
                 case 11:
                     break;
@@ -77,7 +88,7 @@ public class BTTest {
 
 
 
-                
+
         //bonus extra credit to make tree look like the one in the paper manually
         // it is printed in preorder
         BST<Integer , String> bonusCities = new BST<>();
