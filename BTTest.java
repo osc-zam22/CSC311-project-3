@@ -31,7 +31,7 @@ public class BTTest {
                     System.out.printf("Number of Cities : %d" , cities.nodecount);
                     break;
                 case 2: //height of tree
-                    System.out.print(cities.treeHeight(cities.getNode()));
+                    System.out.print("Height of BST: " + cities.treeHeight(cities.getNode()));
                     break;
                 case 3: // preorder
                     cities.preOrderPrint(cities.getNode());
@@ -89,18 +89,6 @@ public class BTTest {
         System.out.println("1. Print number of cities.\n2. Print out the height of the tree.\n" +
             "3. Pre-Order Traversal printout.\n4. In-Order Traversal printout.\n5. Post-Order Traversal printout.\n6. Total population between all cities.\n" + 
             "7. City with biggest populaton.\n8. Cities with less than 50,000.\n9. Cities with population between 50,000 - 80,000.\n" + 
-            "10. Update Pasadena and view change."); 
-    }
-    
-    public static void lessThan50k(){
-
-    }
-
-    public static void between50k80k(){
-
-    }
-
-    public static void updatePas(){
-
+            "10. Update Pasadena and view change.\nEnd program and display Extra Credit."); 
     }
 }
